@@ -1,0 +1,196 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+/* Stile dell'Header */
+header {
+    background-image: url('img/header.jpg'); /* INSERISCI QUI IL PERCORSO ALLA TUA IMMAGINE */
+    background-size: cover; /* L'immagine coprirà l'intera area dell'header */
+    background-position: center; /* Centra l'immagine */
+    background-repeat: no-repeat; /* Evita che l'immagine si ripeta */
+
+
+    background-blend-mode: overlay; /* O 'multiply', 'soft-light', 'darken' a seconda dell'effetto */
+    background-color: rgba(0, 0, 0, 0.75); /* Overlay nero semi-trasparente (0.5 = 50% di opacità) */
+
+ 
+    color: white; /* Assicurati che il testo rimanga bianco per contrasto */
+    padding: 2rem 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+header h1 {
+    margin-bottom: 0.5rem;
+    font-size: 2.5rem;
+}
+
+header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* Stile della Navbar (semplificata) */
+nav {
+    background-color: #333;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 15px 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+nav li a:hover {
+    background-color: #575757;
+}
+
+/* Stile per le Sezioni */
+section {
+    padding: 60px 20px;
+    margin: 0 auto;
+    max-width: 960px;
+    background-color: white;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    line-height: 1.8;
+}
+
+section h2 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 15px;
+}
+
+/* STILI PER L'ACCORDION */
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    font-size: 1.2rem;
+    margin-bottom: 5px; /* Spazio tra i bottoni */
+    border-radius: 5px;
+}
+
+.accordion:hover {
+    background-color: #ccc;
+}
+
+.accordion.active, .accordion:hover {
+    background-color: #ccc;
+}
+
+/* Aggiunge un "più" o "meno" icona */
+.accordion:after {
+    content: '\002B'; /* Carattere "più" Unicode */
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.accordion.active:after {
+    content: "\2212"; /* Carattere "meno" Unicode */
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0; /* Inizialmente nascosto */
+    overflow: hidden;
+    transition: max-height 0.2s ease-out; /* Transizione fluida */
+    margin-bottom: 15px; /* Spazio sotto il pannello aperto */
+    border-left: 3px solid #4CAF50; /* Linea colorata per distinguere il contenuto */
+    padding-top: 5px; /* Per un po' di spazio interno */
+}
+
+.panel p, .panel ul {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+}
+
+/* Stile per Immagini e Video all'interno dei pannelli */
+.panel img, .panel iframe {
+    margin: 15px auto; /* Meno margine all'interno dei pannelli */
+}
+
+/* Stile per i Link generici (nel contenuto) */
+a {
+    color: #4CAF50;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #388E3C;
+}
+
+/* Stile del Footer */
+footer {
+    text-align: center;
+    padding: 25px;
+    background-color: #333;
+    color: white;
+    font-size: 0.9rem;
+    margin-top: 30px;
+}
+
+/* Media Queries per la responsività */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav li {
+        width: 100%;
+        text-align: center;
+    }
+
+    section {
+        padding: 40px 15px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .accordion {
+        font-size: 1.1rem; /* Adatta la dimensione del testo dei bottoni */
+        padding: 15px;
+    }
+}
