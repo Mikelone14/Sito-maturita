@@ -243,3 +243,9 @@ footer {
     margin-left: 20px; /* Indenta la lista */
     padding: 10px 0; /* Un po' di padding interno */
 }
+.responsive-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
