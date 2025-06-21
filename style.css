@@ -12,12 +12,8 @@ header {
     background-size: cover; /* L'immagine coprirà l'intera area dell'header */
     background-position: center; /* Centra l'immagine */
     background-repeat: no-repeat; /* Evita che l'immagine si ripeta */
-
-
     background-blend-mode: overlay; /* O 'multiply', 'soft-light', 'darken' a seconda dell'effetto */
     background-color: rgba(0, 0, 0, 0.75); /* Overlay nero semi-trasparente (0.5 = 50% di opacità) */
-
- 
     color: white; /* Assicurati che il testo rimanga bianco per contrasto */
     padding: 2rem 0;
     text-align: center;
@@ -88,7 +84,7 @@ section h2 {
     padding-bottom: 15px;
 }
 
-/* STILI PER L'ACCORDION */
+/* STILI PER L'ACCORDION PRINCIPALE */
 .accordion {
     background-color: #eee;
     color: #444;
@@ -193,4 +189,57 @@ footer {
         font-size: 1.1rem; /* Adatta la dimensione del testo dei bottoni */
         padding: 15px;
     }
+}
+
+/* STILI PER L'ACCORDION INTERNO (INNER-ACCORDION) */
+.inner-accordion {
+    background-color: #eee; /* Un colore leggermente diverso per distinguerlo? */
+    color: #444;
+    cursor: pointer;
+    padding: 10px 18px; /* Un po' meno padding rispetto al principale */
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    margin-top: 10px; /* Un po' di spazio dal li sopra */
+    font-size: 1em; /* Leggermente più piccolo del principale */
+    border-radius: 5px; /* Angoli arrotondati anche per l'interno */
+}
+
+/* Stile per il bottone interno quando è attivo/hover */
+.inner-accordion.active, .inner-accordion:hover {
+    background-color: #ccc;
+}
+
+.inner-accordion:after {
+    content: '\002B'; /* Simbolo più */
+    color: #444; /* Colore più scuro per il + */
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.inner-accordion.active:after {
+    content: "\2212"; /* Simbolo meno quando attivo */
+}
+
+/* Stile per il pannello interno (nascosto per default) */
+.inner-panel {
+    padding: 0 18px;
+    background-color: #f9f9f9; /* Un colore leggermente diverso dallo sfondo del pannello genitore */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out; /* La stessa transizione */
+    border: 1px solid #eee;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    margin-bottom: 10px; /* Spazio sotto il pannello interno */
+}
+
+/* Stile per gli elementi della lista all'interno del pannello interno */
+.inner-panel ul {
+    list-style: disc; /* Per avere i punti della lista */
+    margin-left: 20px; /* Indenta la lista */
+    padding: 10px 0; /* Un po' di padding interno */
 }
