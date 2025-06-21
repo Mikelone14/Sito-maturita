@@ -94,7 +94,7 @@ section h2 {
     text-align: left;
     border: none;
     outline: none;
-    transition: 0.4s;
+    transition: background-color 0.4s ease; /* Transizione per il colore di sfondo */
     font-size: 1.2rem;
     margin-bottom: 5px; /* Spazio tra i bottoni */
     border-radius: 5px;
@@ -126,10 +126,11 @@ section h2 {
     background-color: white;
     max-height: 0; /* Inizialmente nascosto */
     overflow: hidden;
-    transition: max-height 0.2s ease-out; /* Transizione fluida */
+    transition: max-height 0.7s ease-out; /* Transizione fluida, aumentata a 0.5s */
     margin-bottom: 15px; /* Spazio sotto il pannello aperto */
     border-left: 3px solid #4CAF50; /* Linea colorata per distinguere il contenuto */
     padding-top: 5px; /* Per un po' di spazio interno */
+	transform: translateZ(0); 
 }
 
 .panel p, .panel ul {
@@ -193,18 +194,18 @@ footer {
 
 /* STILI PER L'ACCORDION INTERNO (INNER-ACCORDION) */
 .inner-accordion {
-    background-color: #eee; /* Un colore leggermente diverso per distinguerlo? */
+    background-color: #eee;
     color: #444;
     cursor: pointer;
-    padding: 10px 18px; /* Un po' meno padding rispetto al principale */
+    padding: 10px 18px;
     width: 100%;
     text-align: left;
     border: none;
     outline: none;
-    transition: 0.4s;
-    margin-top: 10px; /* Un po' di spazio dal li sopra */
-    font-size: 1em; /* Leggermente più piccolo del principale */
-    border-radius: 5px; /* Angoli arrotondati anche per l'interno */
+    transition: background-color 0.4s ease; /* Transizione per il colore di sfondo */
+    margin-top: 10px;
+    font-size: 1em;
+    border-radius: 5px;
 }
 
 /* Stile per il bottone interno quando è attivo/hover */
@@ -213,45 +214,48 @@ footer {
 }
 
 .inner-accordion:after {
-    content: '\002B'; /* Simbolo più */
-    color: #444; /* Colore più scuro per il + */
+    content: '\002B';
+    color: #444;
     font-weight: bold;
     float: right;
     margin-left: 5px;
 }
 
 .inner-accordion.active:after {
-    content: "\2212"; /* Simbolo meno quando attivo */
+    content: "\2212";
 }
 
 /* Stile per il pannello interno (nascosto per default) */
 .inner-panel {
     padding: 0 18px;
-    background-color: #f9f9f9; /* Un colore leggermente diverso dallo sfondo del pannello genitore */
+    background-color: #f9f9f9;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.2s ease-out; /* La stessa transizione */
+    transition: max-height 0.5s ease-out; /* Transizione ora più lenta: 0.5 secondi */
     border: 1px solid #eee;
     border-top: none;
     border-radius: 0 0 5px 5px;
-    margin-bottom: 10px; /* Spazio sotto il pannello interno */
+    margin-bottom: 10px;
+	transform: translateZ(0);
 }
 
 /* Stile per gli elementi della lista all'interno del pannello interno */
 .inner-panel ul {
-    list-style: disc; /* Per avere i punti della lista */
-    margin-left: 20px; /* Indenta la lista */
-    padding: 10px 0; /* Un po' di padding interno */
+    list-style: disc;
+    margin-left: 20px;
+    padding: 10px 0;
 }
+
 .responsive-img {
-  max-width: 600px;   /* Limita la larghezza massima su desktop */
-  width: 100%;
-  height: auto;
-  display: block;
-  margin: auto;
+    max-width: 800px; /* Limita la larghezza massima su desktop */
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
 }
+
 @media (max-width: 768px) {
-  .responsive-img {
-    max-width: 90%; /* Rimpicciolisce l'immagine solo su mobile */
-  }
+    .responsive-img {
+        max-width: 90%; /* Rimpicciolisce l'immagine solo su mobile */
+    }
 }
