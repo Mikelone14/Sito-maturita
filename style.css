@@ -243,14 +243,15 @@ footer {
     margin-left: 20px; /* Indenta la lista */
     padding: 10px 0; /* Un po' di padding interno */
 }
-.blocco-img {
-  width: 100%;
-  max-width: 100%;
-  overflow: hidden;
-}
-
 .responsive-img {
+  max-width: 600px;   /* Limita la larghezza massima su desktop */
   width: 100%;
   height: auto;
   display: block;
+  margin: auto;
+}
+@media (max-width: 768px) {
+  .responsive-img {
+    max-width: 90%; /* Rimpicciolisce l'immagine solo su mobile */
+  }
 }
