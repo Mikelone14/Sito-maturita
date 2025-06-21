@@ -9,12 +9,12 @@ body {
 /* Stile dell'Header */
 header {
     background-image: url('img/header.jpg'); /* INSERISCI QUI IL PERCORSO ALLA TUA IMMAGINE */
-    background-size: cover; /* L'immagine coprirà l'intera area dell'header */
-    background-position: center; /* Centra l'immagine */
-    background-repeat: no-repeat; /* Evita che l'immagine si ripeta */
-    background-blend-mode: overlay; /* O 'multiply', 'soft-light', 'darken' a seconda dell'effetto */
-    background-color: rgba(0, 0, 0, 0.75); /* Overlay nero semi-trasparente (0.5 = 50% di opacità) */
-    color: white; /* Assicurati che il testo rimanga bianco per contrasto */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
     padding: 2rem 0;
     text-align: center;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
@@ -89,15 +89,19 @@ section h2 {
     background-color: #eee;
     color: #444;
     cursor: pointer;
-    padding: 18px;
+    /* Riduci padding-left per compensare il bordo sinistro */
+    padding: 18px 18px 18px 13px; /* top, right, bottom, left */
     width: 100%;
     text-align: left;
     border: none;
     outline: none;
-    transition: background-color 0.4s ease; /* Transizione per il colore di sfondo */
+    transition: background-color 0.4s ease;
     font-size: 1.2rem;
-    margin-bottom: 5px; /* Spazio tra i bottoni */
+    margin-bottom: 5px;
     border-radius: 5px;
+    /* --- AGGIUNTO QUI IL BORDO SINISTRO --- */
+    border-left: 5px solid #4CAF50; /* Il bordino verde fisso */
+    /* ------------------------------------ */
 }
 
 .accordion:hover {
@@ -122,15 +126,15 @@ section h2 {
 }
 
 .panel {
-    padding: 0 18px;
+    /* Rimuovi border-left e padding-top qui, li abbiamo spostati sul .accordion */
+    padding: 0 18px; /* Mantieni padding orizzontale */
     background-color: white;
     max-height: 0; /* Inizialmente nascosto */
     overflow: hidden;
-    transition: max-height 0.7s ease-out; /* Transizione fluida, aumentata a 0.5s */
+    /* La transizione è gestita dinamicamente dal JS per massima flessibilità */
+    /* transition: max-height 0.7s ease-out, padding 0.7s ease-out; <- Questa sarà impostata dal JS */
     margin-bottom: 15px; /* Spazio sotto il pannello aperto */
-    border-left: 3px solid #4CAF50; /* Linea colorata per distinguere il contenuto */
-    padding-top: 5px; /* Per un po' di spazio interno */
-	transform: translateZ(0); 
+    /* transform: translateZ(0); Questo può essere rimosso, il JS lo gestisce implicitamente */
 }
 
 .panel p, .panel ul {
@@ -141,7 +145,7 @@ section h2 {
 
 /* Stile per Immagini e Video all'interno dei pannelli */
 .panel img, .panel iframe {
-    margin: 15px auto; /* Meno margine all'interno dei pannelli */
+    margin: 15px auto;
 }
 
 /* Stile per i Link generici (nel contenuto) */
@@ -187,8 +191,8 @@ footer {
     }
 
     .accordion {
-        font-size: 1.1rem; /* Adatta la dimensione del testo dei bottoni */
-        padding: 15px;
+        font-size: 1.1rem;
+        padding: 15px 15px 15px 13px; /* Adatta il padding anche qui */
     }
 }
 
@@ -202,7 +206,7 @@ footer {
     text-align: left;
     border: none;
     outline: none;
-    transition: background-color 0.4s ease; /* Transizione per il colore di sfondo */
+    transition: background-color 0.4s ease;
     margin-top: 10px;
     font-size: 1em;
     border-radius: 5px;
@@ -231,12 +235,13 @@ footer {
     background-color: #f9f9f9;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.5s ease-out; /* Transizione ora più lenta: 0.5 secondi */
+    /* La transizione è gestita dinamicamente dal JS per massima flessibilità */
+    /* transition: max-height 0.5s ease-out, padding 0.5s ease-out; <- Questa sarà impostata dal JS */
     border: 1px solid #eee;
     border-top: none;
     border-radius: 0 0 5px 5px;
     margin-bottom: 10px;
-	transform: translateZ(0);
+    /* transform: translateZ(0); Questo può essere rimosso */
 }
 
 /* Stile per gli elementi della lista all'interno del pannello interno */
@@ -247,7 +252,7 @@ footer {
 }
 
 .responsive-img {
-    max-width: 800px; /* Limita la larghezza massima su desktop */
+    max-width: 600px;
     width: 100%;
     height: auto;
     display: block;
@@ -256,6 +261,6 @@ footer {
 
 @media (max-width: 768px) {
     .responsive-img {
-        max-width: 90%; /* Rimpicciolisce l'immagine solo su mobile */
+        max-width: 90%;
     }
 }

@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function() {
     for (var i = 0; i < accordions.length; i++) {
         accordions[i].addEventListener("click", function() {
             this.classList.toggle("active");
-            var panel = this.nextElementSibling;
+            var panel = this.nextElementSibling; // Il pannello è l'elemento successivo al bottone
 
             if (panel.style.maxHeight && panel.style.maxHeight !== '0px') {
                 slideToggleNative(panel, 'close', 300); // Durata per il principale (es. 300ms)
@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function() {
     for (var j = 0; j < innerAccordions.length; j++) {
         innerAccordions[j].addEventListener("click", function() {
             this.classList.toggle("active");
-            var innerPanel = this.nextElementSibling;
+            var innerPanel = this.nextElementSibling; // Seleziona il pannello interno associato
 
             if (innerPanel.style.maxHeight && innerPanel.style.maxHeight !== '0px') {
                 slideToggleNative(innerPanel, 'close', 200); // Durata per l'interno (es. 200ms)
