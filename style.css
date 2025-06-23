@@ -144,9 +144,15 @@ section h2 {
 }
 
 /* Stile per Immagini e Video all'interno dei pannelli */
-.panel img, .panel iframe {
+/* Rimuovi questa parte, useremo .bio-img per l'immagine specifica */
+/* .panel img, .panel iframe {
+    margin: 15px auto;
+} */
+/* Per le immagini negli schemi, puoi usare questa: */
+.panel .blocco-img img {
     margin: 15px auto;
 }
+
 
 /* Stile per i Link generici (nel contenuto) */
 a {
@@ -251,16 +257,64 @@ footer {
     padding: 10px 0;
 }
 
+/* Stile generale per immagini responsive (altre immagini) */
 .responsive-img {
-    max-width: 600px;
+    max-width: 600px; /* Larghezza massima per le altre immagini */
     width: 100%;
     height: auto;
     display: block;
-    margin: auto;
+    margin: auto; /* Per centrare le altre immagini */
 }
 
 @media (max-width: 768px) {
     .responsive-img {
         max-width: 90%;
+    }
+}
+
+
+/* --- NUOVI STILI PER LA SEZIONE "CHI SONO" E L'IMMAGINE AFFIANCATA --- */
+#presentazione h2 {
+    margin-bottom: 20px; /* Riduci il margine per avvicinare il contenuto */
+}
+
+.bio-content {
+    display: flex; /* Attiva Flexbox */
+    flex-direction: column; /* Di default, gli elementi si impilano (per mobile) */
+    align-items: center; /* Centra gli elementi orizzontalmente in colonna */
+    gap: 30px; /* Spazio tra il testo e l'immagine */
+}
+
+.bio-content > div {
+    /* Questo div contiene il testo, lo facciamo crescere */
+    flex-grow: 1;
+}
+
+.bio-img {
+    max-width: 300px; /* Larghezza massima per l'immagine */
+    height: auto;
+    border-radius: 8px; /* Bordi arrotondati per la foto */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Ombreggiatura per risaltare */
+    /* La classe responsive-img già dovrebbe gestire width: 100%; */
+}
+
+/* Media Query per layout desktop: testo e immagine affiancati */
+@media (min-width: 768px) {
+    .bio-content {
+        flex-direction: row; /* Sul desktop, gli elementi affiancati */
+        justify-content: center; /* Centra orizzontalmente */
+        align-items: flex-start; /* Allinea in alto gli elementi */
+    }
+
+    .bio-content > div {
+        margin-right: 30px; /* Spazio a destra del testo */
+        /* Puoi impostare una larghezza massima per il testo se vuoi */
+        max-width: 60%;
+    }
+
+    .bio-img {
+        max-width: 300px; /* Larghezza specifica per desktop */
+        min-width: 250px; /* Per evitare che diventi troppo piccola */
+        margin: 0; /* Rimuovi i margini automatici */
     }
 }
